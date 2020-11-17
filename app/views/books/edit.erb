@@ -1,0 +1,27 @@
+<h1><%=@book.title%></h1>
+<h2><%=@book.author%></h2>
+<br>
+<form action="/books/<%= @book.id %>" method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+<label>Title:<label>
+    <input type="text" name="book[title]" value="<%=@book.title%>">
+    <br><br>
+<label>Author:<label>
+    <input type="text" name="book[author]" value="<%=@book.author%>">
+    <br><br>
+
+<label>Tags:<label><br><br>
+    <% @tags.each do |tag| %>
+        <input type="checkbox" name="book[tag_ids][]" value=<%="#{tag.id}"%> <%='checked' if @book.tags.include?(tag)%>><%= " #{tag.name}" %><br>
+    <% end %>
+<br><br>
+
+<label>Create new tag: <label>
+<input type="text" name="tag[name]">
+
+<br><br>
+
+<input type="submit" value="Submit">
+
+</form>

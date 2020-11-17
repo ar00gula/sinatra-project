@@ -1,4 +1,6 @@
 <h1><%= @book.title %></h1>
+<h2><%= @book.author %></h2>
+
 <br><br>
 <label>Tags</label><br>
 <ul>
@@ -6,3 +8,11 @@
         <li><a href="/tags/<%=tag.id%>/"><%=tag.name%></a></li>
     <% end %>
 </ul>
+<br><br>
+
+<a href="/tags/<%=@book.id%>/">Edit Book</a>
+<br><br>
+<form action='/books/<%=@book.id%>' method='post'>
+<input id="hidden" type="hidden" name="_method" value="delete">
+<input type="submit" value="Delete Book?">
+</form>
