@@ -1,0 +1,25 @@
+<h1>Add a book to the database!</h1>
+
+<form action="/books" method="post">
+<label>Title:<label>
+    <input type="text" name="book[title]">
+    <br><br>
+<label>Author:<label>
+    <input type="text" name="book[author]">
+    <br><br>
+
+<label>Tags:<label>
+    <% @tags.each do |tag| %>
+        <input type="checkbox" name="book[tag_ids][]" value=<%="#{tag.id}"%>><%= tag.name %><br>
+    <% end %>
+<br><br>
+
+<label>Create new tag: <label>
+<input type="text" name="tag[name]">
+
+<br><br>
+
+<input type="submit" value="Submit">
+
+
+</form>
