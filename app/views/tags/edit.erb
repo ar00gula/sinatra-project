@@ -1,0 +1,16 @@
+<h1><%=@tag.name%></h1><br><br>
+
+<form action="/tags/<%= @tag.id %>" method="post">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+<label>Tag:<label>
+    <input type="text" name="tag[name]" placeholder="<%=@tag.name%>">
+    <br><br>
+    <br><br>
+
+    <input type="submit" value="Edit Tag">
+</form><br><br>
+<form action='/tags/<%=@tag.id%>' method='post'>
+<input id="hidden" type="hidden" name="_method" value="delete">
+<input type="submit" value="Delete Tag">
+</form>

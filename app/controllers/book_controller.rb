@@ -37,7 +37,7 @@ class BooksController < ApplicationController
             book.tags << tag
             book.save
         end
-        redirect to "books/#{book.id}"
+        redirect to "/books/#{book.id}"
     end
 
     delete '/books/:id' do #destroy

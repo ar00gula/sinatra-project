@@ -1,0 +1,14 @@
+<h1><%= @tag.name %></h1>
+
+<br><br>
+<label>Books</label><br>
+<ul>
+    <% @books.each do |book| %>
+    <% if book.tags.include?(@tag) %>
+        <li><a href="/books/<%=book.id%>/"><%=book.name%></a></li>
+    <% end %>
+    <% end %>
+</ul>
+<br><br>
+
+<a href="/tags/<%=@tag.id%>/edit">Edit Tag</a>
