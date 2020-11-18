@@ -1,1 +1,7 @@
-@user
+<%if session[:user_id] == 1 %>
+<% @users.each do |user| %>
+<p><%= user.username %></p>
+<% end %>
+<%else%>
+<%="Permission denied."%>
+<% end %>

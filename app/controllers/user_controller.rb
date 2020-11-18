@@ -6,6 +6,11 @@ class UsersController < ApplicationController
 		enable :sessions
 		set :session_secret, "password_security"
     end
+
+    get '/users' do
+        @users = User.all
+        erb :'users/index'
+    end
     
     get '/account' do
         if Helpers.current_user(session) == nil

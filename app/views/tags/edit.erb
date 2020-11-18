@@ -1,3 +1,4 @@
+<%if session[:user_id]%>
 <h1><%=@tag.name%></h1><br><br>
 
 <form action="/tags/<%= @tag.id %>" method="post">
@@ -10,7 +11,11 @@
 
     <input type="submit" value="Edit Tag">
 </form><br><br>
-<form action='/tags/<%=@tag.id%>' method='post'>
+<form action='/tags' method='post'>
 <input id="hidden" type="hidden" name="_method" value="delete">
+<input type="hidden" name="id" value="<%=@tag.id%>">
 <input type="submit" value="Delete Tag">
 </form>
+<%else%>
+<%="Please log in to view this page."%>
+<% end %>

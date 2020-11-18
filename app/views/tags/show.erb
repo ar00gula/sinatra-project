@@ -5,7 +5,7 @@
 <ul>
     <% @books.each do |book| %>
     <% if book.tags.include?(@tag) %>
-        <li><a href="/books/<%=book.id%>/"><%=book.name%></a></li>
+        <li><a href="/books/<%=book.id%>/"><%=book.title%></a></li>
     <% end %>
     <% end %>
 </ul>

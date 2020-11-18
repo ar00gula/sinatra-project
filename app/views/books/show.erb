@@ -5,8 +5,6 @@
 <img src="<%=@book.img_url%>" class="cover"><br>
 <p><%= @book.summary %></p>
 
-
-
 <br><br>
 <label>Tags</label><br>
 <ul>
@@ -16,9 +14,14 @@
 </ul>
 <br><br>
 
+<%if session[:user_id]%>
 <a href="/books/<%=@book.id%>/edit">Edit Book</a>
 <br><br>
+<% end %>
+
+<%if session[:user_id] == 1 %>
 <form action='/books/<%=@book.id%>' method='post'>
 <input id="hidden" type="hidden" name="_method" value="delete">
 <input type="submit" value="Delete Book?">
 </form>
+<%end%>
