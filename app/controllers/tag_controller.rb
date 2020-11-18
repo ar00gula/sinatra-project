@@ -1,5 +1,11 @@
 class TagsController < ApplicationController
 
+    configure do
+		set :views, "app/views"
+		enable :sessions
+		set :session_secret, "password_security"
+    end
+
     get '/tags' do
         @tags = Tag.all
         erb :'tags/index'

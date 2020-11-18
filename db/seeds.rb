@@ -48,7 +48,13 @@ admin = {
   "password" => "password"
 }
 
-user = User.create(admin)
+test_user = {
+  "username" => "aroo",
+  "password" => "1"
+}
+
+admin = User.create(admin)
+test_user = User.create(test_user)
 
 tag_list = {
     "hurt/comfort" => {
