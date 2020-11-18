@@ -1,5 +1,11 @@
 <h1><%= @book.title %></h1>
-<h2><%= @book.author %></h2>
+<h2><%= @book.author %></h2><br>
+
+
+<img src="<%=@book.img_url%>" class="cover"><br>
+<p><%= @book.summary %></p>
+
+
 
 <br><br>
 <label>Tags</label><br>
@@ -10,7 +16,7 @@
 </ul>
 <br><br>
 
-<a href="/tags/<%=@book.id%>/">Edit Book</a>
+<a href="/books/<%=@book.id%>/edit">Edit Book</a>
 <br><br>
 <form action='/books/<%=@book.id%>' method='post'>
 <input id="hidden" type="hidden" name="_method" value="delete">

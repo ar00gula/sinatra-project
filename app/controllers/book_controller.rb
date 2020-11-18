@@ -28,15 +28,30 @@ class BooksController < ApplicationController
         erb :'books/edit'
     end
 
+    post '/tags' do
+        tag = Tag.create(params[:tag])
+        book = Book.find_by_id(params[:id])
+        book.tags << tag
+
+        redirect to "/books/#{params[:id]}/edit"
+    end
+
+
     patch '/books/:id' do #update
         book = Book.find_by_id(params[:id])
         book.update(params[:book])
-        
-        if !params[:tag][:name].empty?
-            tag = Tag.create(params[:tag])
-            book.tags << tag
+        #i am knowingly going into this knowing that i can overwrite the title, author, and summary way too easily, but that's a problem for later!
+        # if !params[:tag][:name].empty?
+        #     tag = Tag.create(params[:tag])
+        #     book.tags << tag
+        #     book.save
+        # end
+
+        if !params[:img_url].empty?
+            book.img_url = params[:img_url]
             book.save
         end
+
         redirect to "/books/#{book.id}"
     end
 
