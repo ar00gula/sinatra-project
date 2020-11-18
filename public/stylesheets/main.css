@@ -12,6 +12,10 @@
     }
   
     /* --- Welcome Page Styles --- */
+    header {
+      text-align: center;
+    }
+    
     body {
       background-color:mistyrose;
       color: #333;
@@ -49,6 +53,19 @@
   
     p {
       margin-bottom: 18px;
+    }
+
+    ul {
+      padding: 10px;
+      background: rgb(170, 90, 157);
+    }
+
+    li {
+      font-size: 15px;
+      text-align: center;
+      padding: 5px;
+      color: whitesmoke;
+      display: inline;
     }
 
     .cover {
@@ -95,6 +112,11 @@
       border-top: 2px solid #ccc;
       margin-top: 20px;
       padding-top: 20px;
+    }
+
+    .cover_image {
+      background-image: url(@book.url);
+
     }
 
     
