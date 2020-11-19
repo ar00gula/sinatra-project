@@ -2,12 +2,12 @@
 <h2><%= @book.author %></h2><br>
 
 
-<img src="<%=@book.img_url%>" class="cover"><br>
+<img class="cover-image" src="<%=@book.img_url%>"><br>
 <p><%= @book.summary %></p>
 
 <br><br>
 <label>Tags</label><br>
-<ul>
+<ul class="tags">
     <% @book.tags.each do |tag| %>
         <li><a href="/tags/<%=tag.id%>/"><%=tag.name%></a></li>
     <% end %>
