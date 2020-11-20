@@ -2,28 +2,19 @@
 <h2>My Reviews</h2>
 
 <% @reviews.each do |review| %>
-<div class="book_review">
-    <h3><a href='/books/<%=review.book.id%>'><%= review.book_title %><a></h3>
-    <% user = Helpers.current_user(session) %>
-    <% StarRating.where(:user_id => user.id).each do |rating| %>
-            <% if rating.book_id == review.book.id %>
-                <%= rating.stars %>
-            <% end %>
-        <% end %>
+    <div class="book_review">
+        <h3><a href='/books/<%=review.book.id%>'><%= review.book_title %><a></h3>
+        <%= review.show_stars %>
         <%= " || " %>
-    <% HeartRating.where(:user_id => user.id).each do |rating| %>
-            <% if rating.book_id == review.book.id %>
-                <%= rating.hearts %><br><br>
-            <% end %>
-        <% end %>
-<%= review.content %><br><br>
-<form action='/account/reviews' method='post'>
-<a class="edit-link" href='/reviews/<%=review.id%>edit'>Edit Review</a> || 
-<input id="hidden" type="hidden" name="_method" value="delete">
-<input type="hidden" name="id" value="<%=review.id%>">
-<input type="submit" value="Delete Review?">
-</form>
-</div>
+        <%= review.show_hearts %><br><br>
+    <%= review.content %><br><br>
+    <form action='/account/reviews' method='post'>
+    <a class="edit-link" href='/reviews/<%=review.id%>edit'>Edit Review</a> || 
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="hidden" name="id" value="<%=review.id%>">
+    <input type="submit" value="Delete Review?">
+    </form>
+    </div>
 <% end %>
 <% else %>
 Permission denied.

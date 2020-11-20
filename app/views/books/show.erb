@@ -24,6 +24,9 @@
 <% @reviews.each do |review| %>
 <div class="book_review">
     <h3><a href='/books/<%=review.book.id%>'><%= review.user.username %> says...<a></h3>
+    <%= review.show_stars %>
+    <%= " || " %>
+    <%= review.show_hearts %><br>
     <%= review.content %><br><br>
     </div>
     <% end %>

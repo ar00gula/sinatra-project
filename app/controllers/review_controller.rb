@@ -20,22 +20,12 @@ class ReviewController < ApplicationController
 
     patch '/account/reviews' do
         if !params[:review][:content].empty?
-            Review.create(params[:review])
+            review = Review.create(params[:review])
+        
+        else
+            redirect to "/books/'#{review.book_id}'/review"
         end
 
-        stars = StarRating.find_by(:book_id => params[:star_rating][:book_id], :user_id => params[:star_rating][:user_id])
-        if !stars
-            StarRating.create(params[:star_rating])
-        else
-            stars.update(params[:star_rating])
-        end
-
-        hearts = HeartRating.find_by(:book_id => params[:heart_rating][:book_id], :user_id => params[:heart_rating][:user_id])
-        if !hearts
-            HeartRating.create(params[:heart_rating])
-        else
-            hearts.update(params[:heart_rating])
-        end
         redirect to '/account/reviews'
     end
 

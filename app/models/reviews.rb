@@ -14,4 +14,34 @@ class Review < ActiveRecord::Base
         User.find_by_id(self.user_id)
     end
 
+    def show_stars
+        if self.stars == 1
+            "★☆☆☆☆"
+        elsif self.stars == 2
+            "★★☆☆☆"
+        elsif self.stars == 3
+            "★★★☆☆"
+        elsif self.stars == 4
+            "★★★★☆"
+        elsif self.stars == 5
+            "★★★★★"
+        end
+
+    end
+
+    def show_hearts
+        if self.hearts == 1
+            "♥♡♡♡♡"
+        elsif self.hearts == 2
+            "♥♥♡♡♡"
+        elsif self.hearts == 3
+            "♥♥♥♡♡"
+        elsif self.hearts == 4
+            "♥♥♥♥♡"
+        elsif self.hearts == 5
+            "♥♥♥♥♥"
+        end
+    end
+
+
 end

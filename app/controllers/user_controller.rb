@@ -22,7 +22,11 @@ class UsersController < ApplicationController
     end
 
     get '/signup' do #new
-        erb :'users/signup'
+        if Helpers.is_logged_in?(session)
+            erb :'users/loggedin'
+        else
+            erb :'users/signup'
+        end
     end
 
     post '/signup' do #create
@@ -31,7 +35,11 @@ class UsersController < ApplicationController
     end
 
     get '/login' do
-        erb :'users/login'
+        if Helpers.is_logged_in?(session)
+            erb :'users/loggedin'
+        else
+            erb :'users/login'
+        end
     end
 
     post "/login" do
