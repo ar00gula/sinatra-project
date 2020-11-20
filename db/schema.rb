@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201116223510) do
+ActiveRecord::Schema.define(version: 20201119205712) do
 
   create_table "book_tags", force: :cascade do |t|
     t.integer "book_id"
@@ -24,6 +24,26 @@ ActiveRecord::Schema.define(version: 20201116223510) do
     t.text    "summary"
     t.text    "img_url"
     t.integer "user_id"
+    t.integer "user_stars"
+    t.integer "user_hearts"
+  end
+
+  create_table "heart_ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.integer "user_id"
+    t.integer "book_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text    "content"
+    t.integer "book_id"
+    t.integer "user_id"
+  end
+
+  create_table "star_ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.integer "user_id"
+    t.integer "book_id"
   end
 
   create_table "tags", force: :cascade do |t|

@@ -12,4 +12,5 @@ use Rack::MethodOverride
 use BooksController
 use TagsController
 use UsersController
+use ReviewController
 run ApplicationController

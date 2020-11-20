@@ -20,6 +20,8 @@ class BooksController < ApplicationController
 
     get '/books/:id' do #show
         @book = Book.find_by_id(params[:id])
+        @reviews = Review.where(:book_id => @book.id)
+        
         erb :'books/show'
     end
 
@@ -43,7 +45,6 @@ class BooksController < ApplicationController
 
         redirect to "/books/#{params[:id]}/edit"
     end
-
 
     patch '/books/:id' do #update
     if session[:user_id] == 1
@@ -79,7 +80,6 @@ class BooksController < ApplicationController
         #     book.update(params[:book])
         # end
     end
-
         redirect to "/books/#{book.id}"
     end
 

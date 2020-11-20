@@ -6,6 +6,8 @@ class CreateBooks < ActiveRecord::Migration
       t.text :summary
       t.text :img_url
       t.integer :user_id
+      t.integer :user_stars
+      t.integer :user_hearts
     end
   end
 end

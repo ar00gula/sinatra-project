@@ -1,8 +1,7 @@
 <% if Helpers.is_logged_in?(session) == true %>
     <h1><%="Welcome, #{User.find_by_id(session[:user_id])[:username]}!" %></h1>
     <br>
-    <a href="/books">Books</a><br>
-    <a href="/tags">Tags</a>
+    <a href="/account/reviews">My Reviews</a>
     <br><br>
     <a href="/logout">Log Out</a>
 <% end %>

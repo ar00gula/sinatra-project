@@ -1,10 +1,5 @@
 @media screen {
     /* --- Reset Styles --- */
-    * {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
   
     html, body {
       height: 100%;
@@ -13,15 +8,12 @@
   
     /* --- Welcome Page Styles --- */
     header {
-      text-align: center;
       background: whitesmoke;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
       display: flex;
       flex-direction: column;
       height: 120px;
       color:  rgb(233, 176, 196);
+
     }
     
     body {
@@ -29,18 +21,32 @@
       color: #333;
       font-family: Sans-Serif;
       line-height: 18px;
+      margin: 0;
     }
+
+    .header-text {
+      text-align: left;
+      margin: 0px 0px 0px 10px;
+      }
 
     .ul-navbar {
       padding: 10px;
       background: rgb(233, 176, 196);
-      margin-top: auto;
+      margin: auto 0px 0px 0px;
+      text-align: center;
     }
 
     .navbar {
       padding: 0px 40px 0px 0px;
       color: whitesmoke;
       display: inline;
+    }
+
+    .icon {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 40px;
     }
 
     a {
@@ -50,39 +56,45 @@
   
     .wrapper {
       background: #fff;
+      border-radius: 20px;
       -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
       -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
       box-shadow: 0 0 10px rgba(0,0,0,.3);
       margin: 20px auto;
       max-width: 960px;
-      padding: 2.25%; /* 18px / 800px */
-      width: 85%;
+      padding: 1.5% 2.25%; /* 18px / 800px */
+      width: 80%;
       color: rgb(101, 101, 101);
-    }
-
-    .head {
-      text-align: left;
+      
     }
 
     h1 {
       font-size: 36px;
       line-height: 54px;
+      margin: 0;
     }
   
     h2 {
       border-bottom: 2px solid #ccc;
       font-size: 24px;
       line-height: 36px;
+      margin-top: 0px;
       margin-bottom: 16px;
     }
-  
-    h3 {
-      font-size: 18px;
-      line-height: 36px;
+
+    .summary {
+      margin: 10px 0px 20px 0px;
+      padding: 0px 0px 0px 0px;
     }
   
-    p {
-      margin-bottom: 18px;
+    .tag-list {
+      font-weight: bold;
+      margin: 0px
+    }
+
+    .edit-link {
+      font-weight: bold;
+      color: rgb(85, 0, 47);
     }
 
     .cover-image {
@@ -97,7 +109,8 @@
 
     .tags {
       color: rgb(85, 0, 47);
-      list-style-type: disc;
+      list-style-type: none;
+      margin: 0px
     }
 
     textarea {
@@ -113,14 +126,6 @@
       width: 60%; /* 480px / 800px */
     }
   
-    .sidebar {
-      background: #eee;
-      border: 1px solid #ccc;
-      float: right;
-      padding: 2.08333333333%; /* 5px / 240px */
-      width: 30%; /* 240px / 800px */
-    }
-  
     .branding {
       clear: both;
     }
@@ -130,37 +135,119 @@
       margin-top: 20px;
       padding-top: 20px;
     }
-    
+
+
+  .review {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .book_review {
+    display: inline-block;
+    margin: .5%;
+    width: 46%;
+    padding: 1%;
+    border: 2px solid #ccc;
+    border-radius: 20px
+  }
+
+  article {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: rgba(14,40,4,1);
+    border: 2px solid rgb(152, 143, 149);
+  }
+
+
+
+
+
+
+
+
+
+
+  .hide {
+      display: none;
   }
   
-  @media screen and (max-width: 600px) {
-    .wrapper {
-      -moz-box-shadow: none;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      width: auto;
-    }
-  
-    .content, .sidebar {
+  .clear {
       float: none;
-      width: 100%;
-    }
+      clear: both;
+  }
   
-    .sidebar {
-      background: transparent;
-      border: none;
-      border-top: 2px solid #ccc;
+  .rating-box {
+    margin: 8px 0px 0px 30px;
+  }
+  
+  .rating {
+      width: 90px;
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      text-align: center;
+      position: relative;
+  }
+  
+  .rating > label {
+      float: right;
+      display: inline;
       padding: 0;
-    }
+      margin: 0;
+      position: relative;
+      width: 1.1em;
+      cursor: pointer;
+      color: #000;
+  }
   
-    h1 {
-      font-size: 24px;
-      line-height: 36px;
-    }
+  .rating > label:hover,
+  .rating > label:hover ~ label,
+  .rating > input.radio-btn:checked ~ label {
+      color: transparent;
+  }
   
-    h2 {
-      font-size: 18px;
-      line-height: 24px;
-    }
+  .rating > label:hover:before,
+  .rating > label:hover ~ label:before,
+  .rating > input.radio-btn:checked ~ label:before,
+  .rating > input.radio-btn:checked ~ label:before {
+      content: "\2605";
+      position: absolute;
+      left: 0px;
+      color: #ff00cc;
+  }
+  .rating-heart {
+    width: 90px;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    position: relative;
+}
+
+.rating-heart > label {
+    float: right;
+    display: inline;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1.1em;
+    cursor: pointer;
+    color: #000;
+}
+
+.rating-heart > label:hover,
+.rating-heart > label:hover ~ label,
+.rating-heart > input.radio-btn:checked ~ label {
+    color: transparent;
+}
+  .rating-heart > label:hover:before,
+  .rating-heart > label:hover ~ label:before,
+  .rating-heart > input.radio-btn:checked ~ label:before,
+  .rating-heart > input.radio-btn:checked ~ label:before {
+      content: "♥";
+      position: absolute;
+      left: 0px;
+      color: #ff00cc;
+  }
   }
   
