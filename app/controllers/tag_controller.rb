@@ -1,12 +1,6 @@
 class TagsController < ApplicationController
-
-    configure do
-		set :views, "app/views"
-		enable :sessions
-		set :session_secret, "password_security"
-    end
-
-    get '/tags' do
+    
+get '/tags' do
         @tags = Tag.all
         erb :'tags/index'
     end
@@ -16,8 +10,22 @@ class TagsController < ApplicationController
         erb :'tags/new'
     end
 
-    post '/tags' do #create
-        tag = Tag.create(params[:tag])
+    post '/tags' do
+        if !Tag.find_by(:name => params[:tag][:name].downcase)
+            tag = Tag.create(params[:tag])
+            tag.name = tag.name.downcase
+            tag.save
+        else
+            @try = "tag"
+        end
+        book = Book.find_by_id(params[:id])
+        if book
+            book.tags << tag
+            redirect to "/books/#{params[:id]}/edit"
+        else 
+            @tags = Tag.all
+            erb :'/tags/index'
+        end
     end
 
     get '/tags/:id' do
@@ -34,14 +42,20 @@ class TagsController < ApplicationController
 
     patch '/tags/:id' do #update
         tag = Tag.find_by_id(params[:id])
-        tag.update(params[:tag])
-        
+        if tag.user_id == session[:user_id] || session[:user_id] == 1
+            if params[:tag][:name] != ""
+                tag.update(params[:tag])
+            end
+        end
+
         redirect to "tags/#{tag.id}"
     end
 
     delete '/tags' do #destroy
         tag = Tag.find_by_id(params[:id])
+        if tag.user_id == session[:user_id] || session[:user_id] == 1
         tag.delete
+        end
 
         redirect to "/tags"
     end

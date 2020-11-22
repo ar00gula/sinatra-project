@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20201119204943) do
     t.integer "user_id"
     t.integer "user_stars"
     t.integer "user_hearts"
+    t.string  "series"
   end
 
   create_table "reviews", force: :cascade do |t|

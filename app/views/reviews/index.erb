@@ -1,15 +1,14 @@
 <% if Helpers.is_logged_in?(session) == true %>
 <h2>My Reviews</h2>
-
 <% @reviews.each do |review| %>
-    <div class="book_review">
+    <div class="book-review">
         <h3><a href='/books/<%=review.book.id%>'><%= review.book_title %><a></h3>
         <%= review.show_stars %>
         <%= " || " %>
         <%= review.show_hearts %><br><br>
     <%= review.content %><br><br>
     <form action='/account/reviews' method='post'>
-    <a class="edit-link" href='/reviews/<%=review.id%>edit'>Edit Review</a> || 
+    <a class="edit-link" href='/reviews/<%=review.id%>/edit'>Edit Review</a> || 
     <input id="hidden" type="hidden" name="_method" value="delete">
     <input type="hidden" name="id" value="<%=review.id%>">
     <input type="submit" value="Delete Review?">

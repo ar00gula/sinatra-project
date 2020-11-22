@@ -10,8 +10,10 @@ books_list = {
         But Will possesses knowledge that could cost thousands of lives. Enemies are closing in on him from all sides—and Kim is the only man who can help.<br><br>
         
         <i>A 1920s m/m romance trilogy in the spirit of Golden Age pulp fiction.</i>",
-      :img_url => "../images/slippery-creatures.png"
+      :img_url => "../images/slippery-creatures.png",
+      :series => "The Will Darling Adventures"
     },
+
     "The Sugared Game" => {
         :author => "KJ Charles",
         :summary => "It’s been two months since bookseller Will Darling saw Kim Secretan and he doesn’t expect to see him again. What do a rough and ready ex-soldier and a disgraced shady aristocrat have to do with each other anyway?<br><br>
@@ -21,8 +23,10 @@ books_list = {
           This time, though, things are underhand even by Kim standards. This time, the danger is too close to home. And if Will and Kim can’t find common ground against unseen enemies, they risk losing everything.<br><br>
           
           <i>A 1920s m/m romance trilogy in the spirit of Golden Age pulp fiction.</i>",
-        :img_url => "../images/sugared-game.jpg"
+        :img_url => "../images/sugared-game.jpg",
+        :series => "The Will Darling Adventures"
     },
+
     "The Magpie Lord" => {
         :author => "KJ Charles",
         :summary => "<b>A lord in danger. A magician in turmoil. A snowball in hell.</b><br><br>
@@ -36,7 +40,8 @@ books_list = {
         Soon Stephen is falling hard for the worst possible man, at the worst possible time. But Crane’s dangerous appeal isn’t the only thing rendering Stephen powerless. Evil pervades the house, a web of plots is closing round Crane, and if Stephen can’t find a way through it—they’re both going to die.<br><br>
         
         This is a new edition of the book previously published by Samhain. The text has been lightly edited but there are no significant changes.",
-        :img_url => "../images/magpie-lord.jpg"
+        :img_url => "../images/magpie-lord.jpg",
+        :series => "A Charm Of Magpies"
     },
     
     "A Case Of Posession" => {
@@ -50,9 +55,10 @@ books_list = {
         Stephen has problems of his own. As he investigates a plague of giant rats sweeping London, his sudden increase in power, boosted by his blood-and-sex bond with Crane, is rousing suspicion that he’s turned warlock. With all eyes on him, the threat of exposure grows. Stephen could lose his friends, his job and his liberty over his relationship with Crane. He’s not sure if he can take that risk much longer. Crane isn’t sure if he can ask him to.<br><br>
         
         The rats are closing in, and something has to give…",
-        :img_url => "../images/case-of-posession.jpg"
-
+        :img_url => "../images/case-of-posession.jpg",
+        :series => "A Charm Of Magpies"
     },
+
     "Flight of Magpies" => {
         :author => "KJ Charles",
         :summary => "<b>Danger in the air. Lovers on the brink.</b><br><br>
@@ -64,7 +70,8 @@ books_list = {
         Crane chafes at the restrictions of England’s laws, and there’s a worrying development in the blood-and-sex bond he shares with Stephen. A development that makes a sensible man question if they should be together at all.<br><br>
         
         Then a devastating loss brings the people he most loves into bitter conflict. Old enemies, new enemies, and unexpected enemies are painting Stephen and Crane into a corner, and the pressure threatens to tear them apart…",
-        :img_url => "../images/flight-of-magpies.jpg"
+        :img_url => "../images/flight-of-magpies.jpg",
+        :series => "A Charm Of Magpies"
     },
 
     "Jackdaw" => {
@@ -78,7 +85,8 @@ books_list = {
         Ben is determined to make Jonah pay. But he can’t seem to forget what they once shared, and Jonah refuses to let him. Soon Ben is entangled in Jonah’s chaotic existence all over again, and they’re running together—from the police, the justiciary, and some dangerous people with a lethal grudge against them.<br><br>
         
         Threatened on all sides by betrayals, secrets, and the laws of the land, can they find a way to live and love before the past catches up with them?",
-        :img_url => "../images/jackdaw.jpg"
+        :img_url => "../images/jackdaw.jpg",
+        :series => "A Charm Of Magpies World"
     },
 
     "A Queer Trade" => {
@@ -88,7 +96,8 @@ books_list = {
           Crispin tracks his quarry down to waste paper dealer Ned Hall. He needs help, and Ned can’t resist Crispin’s pleading—and appealing—looks. But can the waste-man and the magician prevent a disaster and save Crispin’s skin?<br><br>
           
           A 16,000 word story set in the Charm of Magpies world, and a prequel to the novel Rag and Bone (1 March 2016). This story was first published as part of the Charmed & Dangerous anthology.",
-        :img_url => "../images/queer-trade.jpg"
+        :img_url => "../images/queer-trade.jpg",
+        :series => "A Charm Of Magpies World"
     },
     
     "Rag and Bone" => {
@@ -102,7 +111,68 @@ books_list = {
         Ned’s sick of magic. Sick of the trouble it brings, sick of its dangerous grip on Crispin and the miserable look it puts in his eyes, and sick of being afraid that a gentleman magician won’t want a street paper-seller forever—or even for much longer.<br><br>
         
         But something is stirring among London’s forgotten discards. An ancient evil is waking up and seeking its freedom. And when wild magic hits the rag-and-bottle shop where Ned lives, a panicking Crispin falls back onto bad habits. The embattled lovers must find a way to work together—or London could go up in flames.",
-        :img_url => "../images/rag-and-bone.jpg"
+        :img_url => "../images/rag-and-bone.jpg",
+        :series => "A Charm Of Magpies World"
+
+    },
+
+    "Get A Life, Chloe Brown" => {
+      :author => "Talia Hibbert",
+      :summary => "Chloe Brown is a chronically ill computer geek with a goal, a plan, and a list. After almost—but not quite—dying, she’s come up with six directives to help her “Get a Life”, and she’s already completed the first: finally moving out of her glamourous family’s mansion. The next items?<br><br>
+
+      <ul><li>Enjoy a drunken night out.</li>
+      <li>Ride a motorcycle.</li>
+      <li>Go camping.</li>
+      <li>Have meaningless but thoroughly enjoyable sex.</li>
+      <li>Travel the world with nothing but hand luggage.</li>
+      <li>And… do something bad.</li></ul><br><br>
+      But it’s not easy being bad, even when you’ve written step-by-step guidelines on how to do it correctly. What Chloe needs is a teacher, and she knows just the man for the job.<br><br>
+      
+      Redford ‘Red’ Morgan is a handyman with tattoos, a motorcycle, and more sex appeal than ten-thousand Hollywood heartthrobs. He’s also an artist who paints at night and hides his work in the light of day, which Chloe knows because she spies on him occasionally. Just the teeniest, tiniest bit.<br><br>
+      
+      But when she enlists Red in her mission to rebel, she learns things about him that no spy session could teach her. Like why he clearly resents Chloe’s wealthy background. And why he never shows his art to anyone. And what really lies beneath his rough exterior…",
+      :img_url => "../images/chloe_brown.jpg",
+      :series => "Brown Sisters"
+    },
+
+    "Take A Hint, Dani Brown" => {
+      :author => "Talia Hibbert",
+      :summary => "Danika Brown knows what she wants: professional success, academic renown, and an occasional roll in the hay to relieve all that career-driven tension. But romance? Been there, done that, burned the T-shirt. Romantic partners, whatever their gender, are a distraction at best and a drain at worst. So Dani asks the universe for the perfect friend-with-benefits—someone who knows the score and knows their way around the bedroom.<br><br>
+
+      When brooding security guard Zafir Ansari rescues Dani from a workplace fire drill gone wrong, it’s an obvious sign: PhD student Dani and ex-rugby player Zaf are destined to sleep together. But before she can explain that fact, a video of the heroic rescue goes viral. Now half the internet is shipping #DrRugbae—and Zaf is begging Dani to play along. Turns out, his sports charity for kids could really use the publicity. Lying to help children? Who on earth would refuse?<br><br>
+      
+      Dani’s plan is simple: fake a relationship in public, seduce Zaf behind the scenes. The trouble is, grumpy Zaf’s secretly a hopeless romantic—and he’s determined to corrupt Dani’s stone-cold realism. Before long, he’s tackling her fears into the dirt. But the former sports star has issues of his own, and the walls around his heart are as thick as his… um, thighs.<br><br>
+      
+      Suddenly, the easy lay Dani dreamed of is more complex than her thesis. Has her wish backfired? Is her focus being tested? Or is the universe just waiting for her to take a hint?",
+      :img_url => "../images/dani_brown.jpg",
+      :series => "Brown Sisters"
+    },
+    
+    "Act Your Age, Eve Brown" => {
+      :author => "Talia Hibbert",
+      :summary => "Eve Brown is a certified hot mess. No matter how hard she strives to do right, her life always goes horribly wrong—so she’s given up trying. But when her personal brand of chaos ruins an expensive wedding (someone had to liberate those poor doves), her parents draw the line. It’s time for Eve to grow up and prove herself—even though she’s not entirely sure how…<br><br>
+
+      Jacob Wayne is in control. Always. The bed and breakfast owner’s on a mission to dominate the hospitality industry—and he expects nothing less than perfection. So when a purple-haired tornado of a woman turns up out of the blue to interview for his open chef position, he tells her the brutal truth: not a chance in hell. Then she hits him with her car—supposedly by accident. Yeah, right.<br><br>
+      
+      Now his arm is broken, his B&B is understaffed, and the dangerously unpredictable Eve is fluttering around, trying to help. Before long, she’s infiltrated his work, his kitchen—and his spare bedroom. Jacob hates everything about it. Or rather, he should. Sunny, chaotic Eve is his natural-born nemesis, but the longer these two enemies spend in close quarters, the more their animosity turns into something else. Like Eve, the heat between them is impossible to ignore—and it’s melting Jacob’s frosty exterior.",
+      :img_url => "../images/eve_brown.jpg",
+      :series => "Brown Sisters"
+    },
+
+    "A Girl Like Her" => {
+      :author => "Talia Hibbert",
+      :summary => "RUTH KABBAH IS OKAY WITH BEING AN OUTCAST.<br><br>
+      Between her autism, her comic book nerdery, and the whiff of scandal her small town can’t forget, Ruth will always be Ravenswood’s black sheep. Since she prefers silence and solitude to gossip and pub crawls, that suits her just fine – until Evan Miller comes to town.<br><br>
+      
+      Ex-military man Evan is gorgeous, confident… and he’s Ruth’s new neighbour. Unlike everyone else, he doesn’t seem to mind her crotchety ways or her cooking disasters. In fact, if Ruth didn’t know any better, she might think Evan likes her.<br><br>
+      
+      But Ruth’s been burned before, and some lessons are hard to forget.<br><br>
+      
+      She can’t let her guard down—no matter how many home-cooked meals Evan brings over. Because affection is temporary, trust is made to be broken, and the heat of desire is a dangerous thing to play with.<br><br>
+      
+      So why does this man feel so safe?",
+      :img_url => "../images/dani_brown.jpg",
+      :series => "Ravenswood"
     }
   }
 
@@ -130,17 +200,59 @@ test_user = User.create(test_user)
 
 tag_list = {
     "hurt/comfort" => {
+      "user_id" => "1"
     },
     "historical" => {
+      "user_id" => "1"
     },
     "political" => {
+      "user_id" => "1"
+
     },
     "faerie politics" => { 
-    }
+      "user_id" => "1"
+      
+    },
+    "angst" => { 
+      "user_id" => 1
+    },
+    "anxiety" => { 
+      "user_id" => 1
+    },
+    "romance" => { 
+      "user_id" => 1
+    },
+    "western" => { 
+      "user_id" => 1
+    },
+    "sci-fi" => { 
+      "user_id" => 1
+    },
+    "humor" => { 
+      "user_id" => 1
+    },
+    "found family" => { 
+      "user_id" => 1
+    },
+    "drugs" => { 
+      "user_id" => 1
+    },
+    "first kiss" => { 
+      "user_id" => 1
+    },
+    "anthology" => { 
+      "user_id" => 1
+    },
+    "paranormal" => { 
+      "user_id" => 1
+    },
   }
 
 tag_list.each do |name, tag_hash|
   t = Tag.new
   t.name = name
+  tag_hash.each do |attribute, value|
+    t[attribute] = value
+  end
   t.save
 end

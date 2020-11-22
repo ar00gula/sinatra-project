@@ -3,13 +3,28 @@ class Book < ActiveRecord::Base
     has_many :tags, through: :book_tags
     belongs_to :user
     has_many :reviews
-    has_many :star_ratings
-    has_many :heart_ratings
 
-    # def sort_by_title(books)
-    #     books.sort do |book|
-    #         if self.title.split(" ")[0].downcase == "a" || self.title.split(" ")[0].downcase == "the"
+    def recent_reviews
+        Review.where(:book_id => self.id).reverse
+    end
 
+    def average_stars
+        star_ratings = Review.where(:book_id => self.id).map {|review| review.stars}
+        if star_ratings.length > 0
+            raw_rating = star_ratings.sum/star_ratings.length
+            rating = raw_rating.to_i
+            if rating == 1
+                "★☆☆☆☆"
+            elsif rating == 2
+                "★★☆☆☆"
+            elsif rating == 3
+                "★★★☆☆"
+            elsif rating == 4
+                "★★★★☆"
+            elsif rating == 5
+                "★★★★★"
+            end
+        end
+    end
 
-    #     end 
 end

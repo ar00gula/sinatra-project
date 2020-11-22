@@ -1,12 +1,6 @@
-require 'pry'
 class ReviewController < ApplicationController
-    configure do
-		set :views, "app/views"
-		enable :sessions
-		set :session_secret, "password_security"
-    end
-
-    get '/books/:id/review' do
+    
+get '/books/:id/review' do
         @user = User.find_by_id(session[:user_id])
         @book = Book.find_by_id(params[:id])
         @tags = Tag.all
@@ -18,15 +12,22 @@ class ReviewController < ApplicationController
         erb :'reviews/index'
     end
 
-    patch '/account/reviews' do
-        if !params[:review][:content].empty?
-            review = Review.create(params[:review])
+    post '/account/reviews' do
+        if params[:review][:content].empty? && (params[:review][:stars].empty? || params[:review][:hearts].empty?)
+            redirect "/books/#{params[:review][:book_id].to_i}/review"
         
         else
-            redirect to "/books/'#{review.book_id}'/review"
+            review = Review.create(params[:review])
         end
 
-        redirect to '/account/reviews'
+        redirect to "/books/#{review.book_id}"
+    end
+
+    get '/reviews/:id/edit' do
+
+        @review = Review.find_by_id(params[:id])
+        @book = @review.book
+        erb:'/reviews/edit'
     end
 
     # post '/reviews/:id/edit' do

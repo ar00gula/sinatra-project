@@ -1,14 +1,16 @@
 <h1><%= @tag.name %></h1>
 
 <br><br>
-<label>Books</label><br>
+<h3>Books</h3>
 <ul>
     <% @books.each do |book| %>
     <% if book.tags.include?(@tag) %>
-        <li><a href="/books/<%=book.id%>/"><%=book.title%></a></li>
+        <li><a href="/books/<%=book.id%>"><%=book.title%></a></li>
     <% end %>
     <% end %>
 </ul>
 <br><br>
 
-<a href="/tags/<%=@tag.id%>/edit">Edit Tag</a>
+<% if @tag.user_id == session[:user_id] || session[:user_id] == 1 %>
+<a class="link" href="/tags/<%=@tag.id%>/edit">Edit Tag</a>
+<% end %>

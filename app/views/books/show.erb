@@ -5,32 +5,43 @@
 <img class="cover-image" src="<%=@book.img_url%>"><br>
 <p class="summary"><%= @book.summary %></p>
 
+<h4>Average User Rating: <%= @book.average_stars %></h4>
+
 <p class="tag-list">Tags</p>
 <ul class="tags">
     <% @book.tags.each do |tag| %>
-        <li><a href="/tags/<%=tag.id%>/"><%=tag.name%></a></li>
+        <li><a href="/tags/<%=tag.id%>"><%=tag.name%></a></li>
     <% end %>
 </ul>
 <br>
 
 <%if session[:user_id]%>
-<a class="edit-link" href="/books/<%=@book.id%>/edit">Edit Tags</a> ||
-<a class="edit-link" href="/books/<%=@book.id%>/review">Review Book</a>
+<a class="link" href="/books/<%=@book.id%>/edit">Edit Tags</a> ||
+<a class="link" href="/books/<%=@book.id%>/review">Review Book</a>
 <br><br>
 <% end %>
-<img class="icon" src="../images/book-icon.png">
 <br>
-<h2>User Reviews</h2>
-<% @reviews.each do |review| %>
-<div class="book_review">
-    <h3><a href='/books/<%=review.book.id%>'><%= review.user.username %> says...<a></h3>
-    <%= review.show_stars %>
-    <%= " || " %>
-    <%= review.show_hearts %><br>
-    <%= review.content %><br><br>
-    </div>
+<div class="line"></div>
+<br>
+<br>
+
+<h2>Recent User Reviews</h2>
+<div class="upload-container">
+<% i = 0 %>
+<% @book.recent_reviews.each do |review| %>
+    <% if i < 2 %>
+        <div class="upload">
+        <h3><%= review.user.username %> says...</h3>
+        <%= review.show_stars %> || <%= review.show_hearts %><br><br>
+        <%= review.content %><br><br>
+        </div> 
+    <% i += 1 %>
     <% end %>
+<% end %>
+</div>
+
 <%if session[:user_id] == 1 %>
+<br>
 <form action='/books/<%=@book.id%>' method='post'>
 <input id="hidden" type="hidden" name="_method" value="delete">
 <input type="submit" value="Delete Book?">

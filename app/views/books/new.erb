@@ -11,17 +11,9 @@
 <label>Summary:</label>
     <input type="textarea" name="book[summary]">
     <br><br>
-
-<label>Tags:</label>
-    <% @tags.each do |tag| %>
-        <input type="checkbox" name="book[tag_ids][]" value=<%="#{tag.id}"%>><%= tag.name %><br>
-    <% end %>
-<br><br>
-
-<label>Create new tag: </label>
-<input type="text" name="tag[name]">
-
-<br><br>
+<label>Cover:</label>
+    <input type="text" name="img_url" placeholder="paste image url here">
+    <br><br>
 
 <input type="submit" value="Submit">
 

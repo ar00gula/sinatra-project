@@ -1,7 +1,51 @@
 <% if Helpers.is_logged_in?(session) == true %>
     <h1><%="Welcome, #{User.find_by_id(session[:user_id])[:username]}!" %></h1>
+    <br><br><br>
+    <h2>My Uploads</h2>
+
+    <div class="upload-container">
+    <div class="upload">
+    <h3><a class="link" href='/account/books'>Books</a></h3>
+    <div class="line"></div>
+        <% i = 0 %>
+        <div><% @books.each do |book| %>
+            <% if i < 18 %>
+                <li><a href="/books/<%=book.id%>}"><%=book.title%></a> -- <%=book.author%></li>
+                <% i += 1 %>
+            <% end %>
+        <% end %>
+    </div></div>
+    <div class="upload">
+    <h3><a class="link" href='/account/tags'>Tags</a></h3>
+    <div class="line"></div>
+        <div class="upload-content">
+            <% i = 0 %>
+            <% @tags.each do |tag| %>
+                <% if i < 18 %>
+                    <li><a href="/tags/<%=tag.id%>"><%=tag.name%></a></li>
+                    <% i += 1 %>
+                <% end %>
+            <% end %>
+        </div></div>
+    </div>
     <br>
-    <a href="/account/reviews">My Reviews</a>
+
+    <h2>Recent Reviews</h2>
+    <a class="link" href="/account/reviews">See All</a>
     <br><br>
-    <a href="/logout">Log Out</a>
+    <div class="review-container">
+    <% i = 0 %>
+    <% @reviews.each do |review| %>
+    <% if i < 2 %>
+    <div class="review">
+        <h3><a href='/books/<%=review.book.id%>'><%= review.book_title %><a></h3>
+        <%= review.show_stars %>
+        <%= " || " %>
+        <%= review.show_hearts %><br><br>
+    <%= review.content %><br><br>
+    <% i += 1 %>
+    </div>
+    <% end %>
+    <% end %>
+    </div>
 <% end %>

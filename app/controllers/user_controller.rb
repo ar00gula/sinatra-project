@@ -1,13 +1,6 @@
-require_relative '../../config/environment'
 class UsersController < ApplicationController
-
-    configure do
-		set :views, "app/views"
-		enable :sessions
-		set :session_secret, "password_security"
-    end
-
-    get '/users' do
+    
+get '/users' do
         @users = User.all
         erb :'users/index'
     end
@@ -17,6 +10,11 @@ class UsersController < ApplicationController
             erb :'users/error'
           else
            @user = User.find_by_id(session[:user_id])
+           reviews = Review.where(:user_id => session[:user_id])
+           @reviews = reviews.reverse
+           @books = Book.where(:user_id => session[:user_id])
+           tags = Tag.where(:user_id => session[:user_id])
+           @tags = tags.reverse
            erb :'users/show'
           end
     end
@@ -30,8 +28,13 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do #create
+        if !User.find_by_username(params[:username])
         user = User.create(params)
         redirect to '/login'
+        else
+            @try = "signup"
+        erb :'users/signup'
+        end
     end
 
     get '/login' do
@@ -49,7 +52,9 @@ class UsersController < ApplicationController
 
 			redirect to "/account"
         else
-            redirect to '/login'
+            @try = "login"
+            erb :'users/login'
+            
             #make it so you get a message saying to try again
 		end
     end
@@ -59,6 +64,16 @@ class UsersController < ApplicationController
         session.clear
         redirect to '/'
     
+    end
+
+    get '/account/tags' do
+        @tags = Tag.where(:user_id == Helpers.current_user(session))
+        erb :'users/tags'
+    end
+
+    get 'account/books' do
+        @books = Book.where(:user_id == Helpers.current_user(session))
+        erb :'users/books'
     end
 
 #don't think i actually want this?

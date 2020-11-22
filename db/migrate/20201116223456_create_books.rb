@@ -8,6 +8,7 @@ class CreateBooks < ActiveRecord::Migration
       t.integer :user_id
       t.integer :user_stars
       t.integer :user_hearts
+      t.string :series
     end
   end
 end

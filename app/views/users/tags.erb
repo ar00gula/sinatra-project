@@ -1,0 +1,4 @@
+<h2>My Tags</h2>
+<% @tags.sort_by{|t| t.name}.each do |tag| %>
+    <%= "<a href='tags/#{tag.id}'>#{tag.name}</a>"%><br>
+<% end %>
