@@ -30,16 +30,17 @@ get '/books/:id/review' do
         erb:'/reviews/edit'
     end
 
-    # post '/reviews/:id/edit' do
-    #     erb :'reviews/edit'
-    # end
+    get '/books/:id/reviews' do
 
-    # update '/reviews' do
-        
-    # end
+        @reviews = Review.where(:book_id => params[:id])
+        @book = Book.find_by_id(params[:id])
+        erb :'/reviews/show'
+    end
+
 
     delete '/account/reviews' do #destroy
     Review.find_by_id(params[:id]).delete
     redirect to '/account/reviews'
     end
+
 end

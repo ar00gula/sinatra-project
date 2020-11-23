@@ -7,18 +7,20 @@
     <div class="upload">
     <h3><a class="link" href='/account/books'>Books</a></h3>
     <div class="line"></div>
+        <div class="book-content">
         <% i = 0 %>
-        <div><% @books.each do |book| %>
-            <% if i < 18 %>
-                <li><a href="/books/<%=book.id%>}"><%=book.title%></a> -- <%=book.author%></li>
+        <div><% @books.reverse.each do |book| %>
+            <% if i < 9 %>
+                <li><a href="/books/<%=book.id%>}"><%=book.title%></a> — <%=book.author%></li>
                 <% i += 1 %>
             <% end %>
         <% end %>
+        </div>
     </div></div>
     <div class="upload">
     <h3><a class="link" href='/account/tags'>Tags</a></h3>
     <div class="line"></div>
-        <div class="upload-content">
+        <div class="tag-content">
             <% i = 0 %>
             <% @tags.each do |tag| %>
                 <% if i < 18 %>

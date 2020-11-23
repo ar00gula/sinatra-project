@@ -1,7 +1,7 @@
 <h1>All Books</h1>
 <br>
 <% @books.each do |book| #I don't actually know how I want to sort this??%>
-    <%= "<a href='books/#{book.id}'>#{book.title}</a> — #{book.author}"%><br>
+    <div class="book-list"><%= "<a href='books/#{book.id}'><b>#{book.title}</b></a> — <i>#{book.author}</i>"%></div>
 <% end %>
 
 <br><br>

@@ -5,7 +5,7 @@
 <input type="hidden" name="review[user_id]" value="<%=session[:user_id]%>">
 <input type="hidden" name="review[book_id]" value="<%=@book.id%>">
 
-<div class="try-again"><%= try_again(@try) %></div>
+<div class="try-again"><%= try_again(@message) %></div>
 
 <textarea class="review" name="review[content]" rows="6" cols="60" placeholder="Write your review here! Formatting must be in HTML, sorry :("></textarea>
 

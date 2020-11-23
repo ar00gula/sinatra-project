@@ -6,14 +6,5 @@ class User < ActiveRecord::Base
 end
 
 def try_again(input)
-    if input == "login"
-        "Incorrect username or password. Please try again!"
-
-    elsif input == "signup"
-        "Username is already in use. Please try another option!"
-
-    elsif input == "tag"
-        "Tag already exists. Please try again!"
-
-    end
+    input
 end

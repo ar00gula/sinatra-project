@@ -29,11 +29,17 @@ get '/users' do
 
     post '/signup' do #create
         if !User.find_by_username(params[:username])
-        user = User.create(params)
-        redirect to '/login'
+            if !params[:username].empty? && !params[:password].empty?
+                user = User.create(params)
+                redirect to '/login'
+            else
+                @message = "Username and password must both be filled!"
+                erb :'users/signup'
+            end
         else
-            @try = "signup"
-        erb :'users/signup'
+            @message = "Username is already in use. Please try another option!"
+
+            erb :'users/signup'
         end
     end
 
@@ -52,10 +58,8 @@ get '/users' do
 
 			redirect to "/account"
         else
-            @try = "login"
+            @message = "Incorrect username or password. Please try again!"
             erb :'users/login'
-            
-            #make it so you get a message saying to try again
 		end
     end
     
@@ -75,14 +79,6 @@ get '/users' do
         @books = Book.where(:user_id == Helpers.current_user(session))
         erb :'users/books'
     end
-
-#don't think i actually want this?
-    # get '/users/:id' do #show
-    #     @user = User.find_by_id(params[:id])
-    #     erb :'users/show'
-    # end
-
-
     
 
 end

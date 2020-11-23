@@ -16,7 +16,8 @@ get '/tags' do
             tag.name = tag.name.downcase
             tag.save
         else
-            @try = "tag"
+            @message = "Tag already exists. Please try again!"
+
         end
         book = Book.find_by_id(params[:id])
         if book

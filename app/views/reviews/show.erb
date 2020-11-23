@@ -1,0 +1,16 @@
+<h2>Reviews for <a href='/books/<%= @book.id %>'><%= @book.title %></a></h2>
+<% @reviews.each do |review| %>
+    <div class="book-review">
+        <h3><%= review.user.username %> says...</h3>
+        <%= review.show_stars %> || <%= review.show_hearts %><br><br>
+        <%= review.content %><br><br>
+        <% if review.user_id == session[:user_id] %>
+        <form action='/account/reviews' method='post'>
+    <a class="edit-link" href='/reviews/<%=review.id%>/edit'>Edit Review</a> || 
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="hidden" name="id" value="<%=review.id%>">
+    <input type="submit" value="Delete Review?">
+    </form>
+    <% end %>
+    </div> 
+<% end %>

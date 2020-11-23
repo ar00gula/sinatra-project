@@ -11,7 +11,8 @@ books_list = {
         
         <i>A 1920s m/m romance trilogy in the spirit of Golden Age pulp fiction.</i>",
       :img_url => "../images/slippery-creatures.png",
-      :series => "The Will Darling Adventures"
+      :series => "The Will Darling Adventures",
+      :user_id => "1"
     },
 
     "The Sugared Game" => {
@@ -24,7 +25,8 @@ books_list = {
           
           <i>A 1920s m/m romance trilogy in the spirit of Golden Age pulp fiction.</i>",
         :img_url => "../images/sugared-game.jpg",
-        :series => "The Will Darling Adventures"
+        :series => "The Will Darling Adventures",
+        :user_id => "1"
     },
 
     "The Magpie Lord" => {
@@ -41,7 +43,8 @@ books_list = {
         
         This is a new edition of the book previously published by Samhain. The text has been lightly edited but there are no significant changes.",
         :img_url => "../images/magpie-lord.jpg",
-        :series => "A Charm Of Magpies"
+        :series => "A Charm Of Magpies",
+        :user_id => "1"
     },
     
     "A Case Of Posession" => {
@@ -56,7 +59,8 @@ books_list = {
         
         The rats are closing in, and something has to give…",
         :img_url => "../images/case-of-posession.jpg",
-        :series => "A Charm Of Magpies"
+        :series => "A Charm Of Magpies",
+        :user_id => "1"
     },
 
     "Flight of Magpies" => {
@@ -71,7 +75,8 @@ books_list = {
         
         Then a devastating loss brings the people he most loves into bitter conflict. Old enemies, new enemies, and unexpected enemies are painting Stephen and Crane into a corner, and the pressure threatens to tear them apart…",
         :img_url => "../images/flight-of-magpies.jpg",
-        :series => "A Charm Of Magpies"
+        :series => "A Charm Of Magpies",
+        :user_id => "1"
     },
 
     "Jackdaw" => {
@@ -86,7 +91,8 @@ books_list = {
         
         Threatened on all sides by betrayals, secrets, and the laws of the land, can they find a way to live and love before the past catches up with them?",
         :img_url => "../images/jackdaw.jpg",
-        :series => "A Charm Of Magpies World"
+        :series => "A Charm Of Magpies World",
+        :user_id => "1"
     },
 
     "A Queer Trade" => {
@@ -97,7 +103,8 @@ books_list = {
           
           A 16,000 word story set in the Charm of Magpies world, and a prequel to the novel Rag and Bone (1 March 2016). This story was first published as part of the Charmed & Dangerous anthology.",
         :img_url => "../images/queer-trade.jpg",
-        :series => "A Charm Of Magpies World"
+        :series => "A Charm Of Magpies World",
+        :user_id => "1"
     },
     
     "Rag and Bone" => {
@@ -112,7 +119,8 @@ books_list = {
         
         But something is stirring among London’s forgotten discards. An ancient evil is waking up and seeking its freedom. And when wild magic hits the rag-and-bottle shop where Ned lives, a panicking Crispin falls back onto bad habits. The embattled lovers must find a way to work together—or London could go up in flames.",
         :img_url => "../images/rag-and-bone.jpg",
-        :series => "A Charm Of Magpies World"
+        :series => "A Charm Of Magpies World",
+        :user_id => "1"
 
     },
 
@@ -132,7 +140,8 @@ books_list = {
       
       But when she enlists Red in her mission to rebel, she learns things about him that no spy session could teach her. Like why he clearly resents Chloe’s wealthy background. And why he never shows his art to anyone. And what really lies beneath his rough exterior…",
       :img_url => "../images/chloe_brown.jpg",
-      :series => "Brown Sisters"
+      :series => "Brown Sisters",
+      :user_id => "1"
     },
 
     "Take A Hint, Dani Brown" => {
@@ -145,7 +154,8 @@ books_list = {
       
       Suddenly, the easy lay Dani dreamed of is more complex than her thesis. Has her wish backfired? Is her focus being tested? Or is the universe just waiting for her to take a hint?",
       :img_url => "../images/dani_brown.jpg",
-      :series => "Brown Sisters"
+      :series => "Brown Sisters",
+      :user_id => "1"
     },
     
     "Act Your Age, Eve Brown" => {
@@ -156,7 +166,8 @@ books_list = {
       
       Now his arm is broken, his B&B is understaffed, and the dangerously unpredictable Eve is fluttering around, trying to help. Before long, she’s infiltrated his work, his kitchen—and his spare bedroom. Jacob hates everything about it. Or rather, he should. Sunny, chaotic Eve is his natural-born nemesis, but the longer these two enemies spend in close quarters, the more their animosity turns into something else. Like Eve, the heat between them is impossible to ignore—and it’s melting Jacob’s frosty exterior.",
       :img_url => "../images/eve_brown.jpg",
-      :series => "Brown Sisters"
+      :series => "Brown Sisters",
+      :user_id => "1"
     },
 
     "A Girl Like Her" => {
@@ -172,7 +183,70 @@ books_list = {
       
       So why does this man feel so safe?",
       :img_url => "../images/dani_brown.jpg",
-      :series => "Ravenswood"
+      :series => "Ravenswood",
+      :user_id => "1"
+    },
+
+    "A Princess In Theory" => {
+      :author => "Alyssa Cole",
+      :summary => "<b>From acclaimed author Alyssa Cole comes the tale of a city Cinderella and her Prince Charming in disguise . . .</b><br><br>
+
+      Between grad school and multiple jobs, Naledi Smith doesn’t have time for fairy tales…or patience for the constant e-mails claiming she’s betrothed to an African prince. Sure. Right. Delete! As a former foster kid, she’s learned that the only things she can depend on are herself and the scientific method, and a silly e-mail won’t convince her otherwise.<br><br>
+      
+      Prince Thabiso is the sole heir to the throne of Thesolo, shouldering the hopes of his parents and his people. At the top of their list? His marriage. Ever dutiful, he tracks down his missing betrothed. When Naledi mistakes the prince for a pauper, Thabiso can’t resist the chance to experience life—and love—without the burden of his crown.<br><br>
+      
+      The chemistry between them is instant and irresistible, and flirty friendship quickly evolves into passionate nights. But when the truth is revealed, can a princess in theory become a princess ever after?<br><br>
+      
+      <b>Selected as one of the New York Times 100 Notable Books of 2018!</b>",
+      :img_url => "../images/princess_in_theory.jpg",
+      :series => "Reluctant Royals",
+      :user_id => "1"
+    },
+
+    "A Duke by Default" => {
+      :author => "Alyssa Cole",
+      :summary => "New York City socialite and perpetual hot mess Portia Hobbs is tired of disappointing her family, friends, and—most importantly—herself. An apprenticeship with a struggling swordmaker in Scotland is a chance to use her expertise and discover what she’s capable of. Turns out she excels at aggravating her gruff silver fox boss…when she’s not having inappropriate fantasies about his sexy Scottish burr***.***<br><br>
+
+      Tavish McKenzie doesn’t need a rich, spoiled American telling him how to run his armory…even if she is infuriatingly good at it. Tav tries to rebuff his apprentice—and his attraction to her—but when Portia accidentally discovers that he’s the secret son of a duke, rough-around-the-edges Tav becomes her newest makeover project.<br><br>
+      
+      Forging metal into weapons and armor is one thing, but when desire burns out of control and the media spotlight gets too hot to bear, can a commoner turned duke and his posh apprentice find lasting love?",
+      :img_url => "../images/duke_by_default.jpg",
+      :series => "Reluctant Royals",
+      :user_id => "1"
+    },
+
+    "Once Ghosted, Twice Shy" => {
+      :author => "Alyssa Cole",
+      :summary => "While her boss the prince was busy wooing his betrothed, Likotsi had her own love affair after swiping right on a dating app. But her romance had ended in heartbreak, and now, back in NYC again, she’s determined to rediscover her joy—so of course she runs into the woman who broke her heart.<br><br>
+
+      When Likotsi and Fabiola meet again on a stalled subway train months later, Fab asks for just one cup of tea. Likotsi, hoping to know why she was unceremoniously dumped, agrees. Tea and food soon leads to them exploring the city together, and their past, with Fab slowly revealing why she let Likotsi go, and both of them wondering if they can turn this second chance into a happily ever after.<br><br>",
+      :img_url => "../images/once-ghosted-twice-shy.jpg",
+      :series => "Reluctant Royals",
+      :user_id => "1"
+    },
+
+    "Can't Escape Love" => {
+      :author => "Alyssa Cole",
+      :summary => "Regina Hobbs is nerdy by nature, businesswoman by nurture. She's finally taking her pop culture-centered media enterprise, Girls with Glasses, to the next level, but the stress is forcing her to face a familiar supervillain: insomnia. The only thing that helps her sleep when things get this bad is the deep, soothing voice of puzzle-obsessed live streamer Gustave Nguyen. The problem? His archive has been deleted.<br><br>
+
+      Gus has been tasked with creating an escape room themed around a romance anime…except he knows nothing about romance or anime. Then mega-nerd and anime expert Reggie comes calling, and they make a trade: his voice for her knowledge. But when their online friendship has IRL chemistry, will they be able to escape love?",
+      :img_url => "../images/cant-escape-love.jpg",
+      :series => "Reluctant Royals",
+      :user_id => "1"
+    },
+
+    "A Prince On Paper" => {
+      :author => "Alyssa Cole",
+      :summary => "<b>The Reluctant Royals series returns with a good girl searching for the life that’s not too big, and not too small, and the bad boy prince who might be just right for her…</b><br><br>
+
+      Nya Jerami fled Thesolo for the glitz and glamour of NYC but discovered that her Prince Charming only exists in her virtual dating games. When Nya returns home for a royal wedding, she accidentally finds herself up close and personal—in bed—with the real-life celebrity prince who she loves to hate.<br><br>
+      
+      For Johan von Braustein, the red-headed step-prince of Liechtienbourg, acting as paparazzi bait is a ruse that protects his brother—the heir to the throne—and his own heart. When a royal referendum threatens his brother’s future, a fake engagement is the perfect way to keep the cameras on him.<br><br>
+      
+      Nya and Johan both have good reasons to avoid love, but as desires are laid bare behind palace doors, they must decide if their fake romance will lead to a happily-ever-after.",
+      :img_url => "../images/prince-on-paper.jpg",
+      :series => "Reluctant Royals",
+      :user_id => "1"
     }
   }
 
@@ -195,8 +269,15 @@ test_user = {
   "password" => "1"
 }
 
+test_user_2 = {
+  "username" => "luna",
+  "password" => "2"
+}
+
 admin = User.create(admin)
 test_user = User.create(test_user)
+test_user_2 = User.create(test_user_2)
+
 
 tag_list = {
     "hurt/comfort" => {
@@ -255,4 +336,38 @@ tag_list.each do |name, tag_hash|
     t[attribute] = value
   end
   t.save
+end
+
+review_list ={
+  "dummy_review_1" => {
+      :user_id => "1",
+      :stars => "5",
+      :hearts => "5",
+      :content => "This is such a good book!"
+  },
+
+  "dummy_review_2" => {
+    :user_id => "2",
+    :stars => "5",
+    :hearts => "3",
+    :content => "This book is super well written but it's not my jam."
+  },
+
+  "dummy_review_3" => {
+    :user_id => "3",
+    :stars => "4",
+    :hearts => "5",
+    :content => "I loved this book but I got distracted by some plotholes."
+  }
+}
+
+Book.all.each do |book|
+    review_list.each do |name, review_hash|
+      r = Review.new
+      review_hash.each do |attribute, value|
+        r[attribute] = value
+      end
+      r.book_id = "#{book.id}"
+    r.save
+    end
 end
