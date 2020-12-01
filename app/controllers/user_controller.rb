@@ -1,22 +1,22 @@
 class UsersController < ApplicationController
     
-get '/users' do
-        @users = User.all
-        erb :'users/index'
-    end
-    
+    get '/users' do
+            @users = User.all
+            erb :'users/index'
+        end
+        
     get '/account' do
         if Helpers.current_user(session) == nil
             erb :'users/error'
-          else
-           @user = User.find_by_id(session[:user_id])
-           reviews = Review.where(:user_id => session[:user_id])
-           @reviews = reviews.reverse
-           @books = Book.where(:user_id => session[:user_id])
-           tags = Tag.where(:user_id => session[:user_id])
-           @tags = tags.reverse
-           erb :'users/show'
-          end
+            else
+            @user = User.find_by_id(session[:user_id])
+            reviews = Review.where(:user_id => session[:user_id])
+            @reviews = reviews.reverse
+            @books = Book.where(:user_id => session[:user_id])
+            tags = Tag.where(:user_id => session[:user_id])
+            @tags = tags.reverse
+            erb :'users/show'
+            end
     end
 
     get '/signup' do #new
@@ -28,7 +28,7 @@ get '/users' do
     end
 
     post '/signup' do #create
-        if !User.find_by_username(params[:username])
+        if User.new(params).valid?
             if !params[:username].empty? && !params[:password].empty?
                 user = User.create(params)
                 redirect to '/login'

@@ -5,6 +5,7 @@
 <input id="hidden" type="hidden" name="_method" value="patch">
 <input type="hidden" name="review[user_id]" value="<%=session[:user_id]%>">
 <input type="hidden" name="review[book_id]" value="<%=@book.id%>">
+<input type="hidden" name="review[id]" value="<%=@review.id%>">
 
 
 <textarea class="review" name="review[content]" rows="6" cols="60"><%=@review.content%></textarea>

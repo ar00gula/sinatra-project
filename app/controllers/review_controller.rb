@@ -23,6 +23,12 @@ get '/books/:id/review' do
         redirect to "/books/#{review.book_id}"
     end
 
+    patch '/account/reviews' do
+        review = Review.find(params[:review][:id])
+        review.update(params[:review])
+        redirect to 'account/reviews'
+    end
+
     get '/reviews/:id/edit' do
 
         @review = Review.find_by_id(params[:id])

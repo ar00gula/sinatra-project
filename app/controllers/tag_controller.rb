@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
     
-get '/tags' do
+    get '/tags' do
         @tags = Tag.all
         erb :'tags/index'
     end
@@ -10,23 +10,24 @@ get '/tags' do
         erb :'tags/new'
     end
 
-    post '/tags' do
+    post '/tags' do 
         if !Tag.find_by(:name => params[:tag][:name].downcase)
             tag = Tag.create(params[:tag])
             tag.name = tag.name.downcase
             tag.save
+            book = Book.find_by_id(params[:id])
+            if book
+                book.tags << tag
+                redirect to "/books/#{params[:id]}/edit"
+            else 
+                @tags = Tag.all
+                erb :'/tags/index'
+            end
         else
             @message = "Tag already exists. Please try again!"
 
         end
-        book = Book.find_by_id(params[:id])
-        if book
-            book.tags << tag
-            redirect to "/books/#{params[:id]}/edit"
-        else 
-            @tags = Tag.all
-            erb :'/tags/index'
-        end
+        
     end
 
     get '/tags/:id' do

@@ -182,7 +182,7 @@ books_list = {
       She can’t let her guard down—no matter how many home-cooked meals Evan brings over. Because affection is temporary, trust is made to be broken, and the heat of desire is a dangerous thing to play with.<br><br>
       
       So why does this man feel so safe?",
-      :img_url => "../images/dani_brown.jpg",
+      :img_url => "../images/a-girl-like-her.jpg",
       :series => "Ravenswood",
       :user_id => "1"
     },

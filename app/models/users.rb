@@ -3,8 +3,10 @@ class User < ActiveRecord::Base
     has_many :tags
     has_many :reviews
     has_secure_password
+
+    validates :username, uniqueness: true
 end
 
-def try_again(input)
-    input
+def try_again(message)
+    message
 end

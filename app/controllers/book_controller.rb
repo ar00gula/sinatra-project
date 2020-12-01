@@ -24,10 +24,14 @@ class BooksController < ApplicationController
     end
 
     get '/books/:id/edit' do #edit
-        @user = User.find_by_id(session[:user_id])
-        @book = Book.find_by_id(params[:id])
-        @tags = Tag.all
-        erb :'books/edit'
+        if Helper.is_logged_in?
+            @user = User.find_by_id(session[:user_id])
+            @book = Book.find_by_id(params[:id])
+            @tags = Tag.all
+            erb :'books/edit'
+        else
+            erb :'users/error'
+        end
     end
 
     patch '/books/:id' do #update
