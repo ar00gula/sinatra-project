@@ -8,8 +8,12 @@ get '/books/:id/review' do
     end
 
     get '/account/reviews' do
+        if Helpers.is_logged_in?(session)
         @reviews = Review.where(:user_id => session[:user_id])
         erb :'reviews/index'
+        else
+            erb :'users/error'
+        end
     end
 
     post '/account/reviews' do
@@ -30,10 +34,14 @@ get '/books/:id/review' do
     end
 
     get '/reviews/:id/edit' do
+        if Helpers.is_logged_in?(session)
 
         @review = Review.find_by_id(params[:id])
         @book = @review.book
-        erb:'/reviews/edit'
+        erb :'/reviews/edit'
+        else
+            erb :'users/error'
+        end
     end
 
     get '/books/:id/reviews' do

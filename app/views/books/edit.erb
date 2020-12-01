@@ -2,6 +2,7 @@
 <h1><%=@book.title%></h1>
 <h2><%=@book.author%></h2>
 <br>
+<p><%= @error_message %></p>
 <form action="/books/<%= @book.id %>" method="post">
 <input id="hidden" type="hidden" name="_method" value="patch">
 <%if session[:user_id] == 1 %>

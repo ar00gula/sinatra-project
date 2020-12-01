@@ -1,4 +1,4 @@
 <h2>My Books</h2>
 <% @books.each do |book| #I don't actually know how I want to sort this??%>
-    <%= "<a href='books/#{book.id}'>#{book.title}</a> — #{book.author}"%><br>
+    <%= "<a href='/books/#{book.id}'>#{book.title}</a> — #{book.author}"%><br>
 <% end %>

@@ -6,26 +6,36 @@ class TagsController < ApplicationController
     end
 
     get '/tags/new' do #new
-        @tags = Tag.all
-        erb :'tags/new'
+        if Helpers.is_logged_in?(session)
+            @tags = Tag.all
+            erb :'tags/new'
+        else
+            erb :'users/error'
+        end
     end
 
     post '/tags' do 
-        if !Tag.find_by(:name => params[:tag][:name].downcase)
-            tag = Tag.create(params[:tag])
-            tag.name = tag.name.downcase
-            tag.save
-            book = Book.find_by_id(params[:id])
-            if book
-                book.tags << tag
-                redirect to "/books/#{params[:id]}/edit"
-            else 
-                @tags = Tag.all
-                erb :'/tags/index'
+        if Helpers.is_logged_in?(session)
+            if Tag.new(params[:tag]).valid?
+                if !Tag.find_by(:name => params[:tag][:name].downcase)
+                    tag = Tag.create(params[:tag])
+                    tag.name = tag.name.downcase
+                    tag.save
+                    book = Book.find_by_id(params[:id])
+                    if book
+                        book.tags << tag
+                        redirect to "/books/#{params[:id]}/edit"
+                    else 
+                        @tags = Tag.all
+                        erb :'/tags/index'
+                    end
+                else
+                   "Submission invalid. Please try again!"
+                end
             end
+            "Submission invalid. Please try again!"
         else
-            @message = "Tag already exists. Please try again!"
-
+            erb :'users/error'
         end
         
     end
@@ -38,11 +48,16 @@ class TagsController < ApplicationController
     end
 
     get '/tags/:id/edit' do #edit
-        @tag = Tag.find_by_id(params[:id])
-        erb :'tags/edit'
+        if Helpers.is_logged_in?(session)
+            @tag = Tag.find_by_id(params[:id])
+            erb :'tags/edit'
+        else
+            erb :'users/error'
+        end
     end
 
     patch '/tags/:id' do #update
+    if Helpers.is_logged_in?(session)
         tag = Tag.find_by_id(params[:id])
         if tag.user_id == session[:user_id] || session[:user_id] == 1
             if params[:tag][:name] != ""
@@ -51,15 +66,22 @@ class TagsController < ApplicationController
         end
 
         redirect to "tags/#{tag.id}"
+    else
+        erb :'users/error'
+    end
     end
 
     delete '/tags' do #destroy
-        tag = Tag.find_by_id(params[:id])
-        if tag.user_id == session[:user_id] || session[:user_id] == 1
-        tag.delete
-        end
+        if Helpers.is_logged_in?(session)
+            tag = Tag.find_by_id(params[:id])
+            if tag.user_id == session[:user_id] || session[:user_id] == 1
+            tag.delete
+            end
 
-        redirect to "/tags"
+            redirect to "/tags"
+        else
+            erb :'users/error'
+        end
     end
 
 end

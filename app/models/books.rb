@@ -4,6 +4,11 @@ class Book < ActiveRecord::Base
     belongs_to :user
     has_many :reviews
 
+    validates :title, presence: true
+    validates :author, presence: true
+    validates :summary, presence: true
+    validates :img_url, presence: true
+
     def recent_reviews
         Review.where(:book_id => self.id).reverse
     end

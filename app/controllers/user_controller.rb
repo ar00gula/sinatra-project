@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-    
-    get '/users' do
-            @users = User.all
-            erb :'users/index'
-        end
         
     get '/account' do
         if Helpers.current_user(session) == nil
@@ -70,14 +65,22 @@ class UsersController < ApplicationController
     
     end
 
-    get '/account/tags' do
-        @tags = Tag.where(:user_id == Helpers.current_user(session))
-        erb :'users/tags'
-    end
-
-    get 'account/books' do
+    get '/account/books' do
+        if Helpers.is_logged_in?(session)
         @books = Book.where(:user_id == Helpers.current_user(session))
         erb :'users/books'
+        else
+            erb :'users/error'
+        end
+    end
+
+    get '/account/tags' do
+        if Helpers.is_logged_in?(session)
+            @tags = Tag.where(:user_id == Helpers.current_user(session))
+            erb :'users/tags'
+        else
+            erb :'users/error'
+        end
     end
     
 

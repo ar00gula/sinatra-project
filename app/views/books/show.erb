@@ -41,7 +41,7 @@
 <% end %>
 </div>
 
-<%if session[:user_id] == 1 %>
+<%if session[:user_id] == 1 || @book.user_id == session[:user_id] %>
 <br>
 <form action='/books/<%=@book.id%>' method='post'>
 <input id="hidden" type="hidden" name="_method" value="delete">

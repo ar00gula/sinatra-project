@@ -6,8 +6,12 @@ class BooksController < ApplicationController
     end
 
     get '/books/new' do #new
-        @tags = Tag.all
-        erb :'books/new'
+        if Helpers.is_logged_in?(session)
+            @tags = Tag.all
+            erb :'books/new'
+        else
+            erb :'users/error'
+        end
     end
 
     get '/books/:id' do #show
@@ -16,15 +20,23 @@ class BooksController < ApplicationController
     end
 
     post '/books' do #create
-        book = Book.create(params[:book])
-        book.user_id = session[:user_id]
-        book.save
-        
-        redirect to '/books'
+    if Helpers.is_logged_in?(session)
+        if Book.new(params[:book]).valid?
+            book = Book.create(params[:book])
+            book.user_id = session[:user_id]
+            book.save
+            
+            redirect to '/books'
+        else
+            "Submission invalid. All fields must be filled!"
+            end
+    else
+        erb :'users/error'
+    end
     end
 
     get '/books/:id/edit' do #edit
-        if Helper.is_logged_in?
+        if Helpers.is_logged_in?(session)
             @user = User.find_by_id(session[:user_id])
             @book = Book.find_by_id(params[:id])
             @tags = Tag.all
@@ -35,7 +47,7 @@ class BooksController < ApplicationController
     end
 
     patch '/books/:id' do #update
-    if session[:user_id] == 1
+    if session[:user_id] == 1 || book.user_id == session[:user_id]
         book = Book.find_by_id(params[:id])
         book.update(params[:book])
 
@@ -66,9 +78,17 @@ class BooksController < ApplicationController
     end
 
     delete '/books/:id' do #destroy
+    if Helpers.is_logged_in?(session)
         book = Book.find_by_id(params[:id])
+        if book.user_id == session[:user_id] || 1
         book.delete
         redirect to '/books'
+        else
+            redirect to '/books'
+        end
+    else
+        erb :'users/error'
     end
+end
  
 end
